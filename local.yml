@@ -2,6 +2,9 @@
 - hosts: localhost
   connection: local
 
+  roles:
+  - kewlfft.aur
+
   tasks:
     - name: install base packages
       become: true
@@ -14,6 +17,19 @@
           - openssh
           - wget
           - python
+          - xorg
+          - xorg-xinit
+          - rxvt-unicode
+          - alacritty
+          - nvidia
+          - nvidia-settings
+          - python-pip
+          - base-devel
+
+    - name: install pip packages
+      pip:
+        name:
+          - wakatime
 
     - name: clone dotfiles repository
       ansible.builtin.git:
@@ -75,3 +91,5 @@
         owner: rmc
         group: rmc
         state: link
+
+    - aur: name=paru
