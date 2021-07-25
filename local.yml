@@ -43,3 +43,35 @@
         owner: rmc
         group: rmc
         state: link
+    
+    - name: link vim configs
+      ansible.builtin.file:
+        src: /home/rmc/dotfiles/vim/vimrc
+        dest: /home/rmc/.vimrc
+        owner: rmc
+        group: rmc
+        state: link
+    
+    - name: link vim configs
+      ansible.builtin.file:
+        src: /home/rmc/dotfiles/vim/vim
+        dest: /home/rmc/.vim
+        owner: rmc
+        group: rmc
+        state: link
+    
+    - name: link vim configs
+      ansible.builtin.file:
+        src: /home/rmc/dotfiles/vim/gvimrc
+        dest: /home/rmc/.gvimrc
+        owner: rmc
+        group: rmc
+        state: link
+    
+    - name: link vim configs
+      ansible.builtin.file:
+        src: /home/rmc/dotfiles/vim/ideavimrc
+        dest: /home/rmc/.ideavimrc
+        owner: rmc
+        group: rmc
+        state: link
