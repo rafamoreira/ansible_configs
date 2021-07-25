@@ -54,8 +54,8 @@
     
     - name: link vim configs
       ansible.builtin.file:
-        src: /home/rmc/dotfiles/vim/vim/
-        dest: /home/rmc/.vim/
+        src: /home/rmc/dotfiles/vim/vim
+        dest: /home/rmc/.vim
         owner: rmc
         group: rmc
         state: link
