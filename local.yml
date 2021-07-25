@@ -1,10 +1,10 @@
 ---
 - hosts: localhost
   connection: local
-  become: true
 
   tasks:
     - name: install base packages
+      become: true
       package:
         name:
           - htop
@@ -23,7 +23,7 @@
     - name: link zshrc
       ansible.builtin.file:
         src: /home/rmc/dotfiles/zsh/zshrc
-        dest: /home/rmc/dotfiles/.zshrc
+        dest: /home/rmc/.zshrc
         owner: rmc
         group: rmc
         state: link
@@ -31,7 +31,15 @@
     - name: link zprofile
       ansible.builtin.file:
         src: /home/rmc/dotfiles/zsh/zprofile
-        dest: /home/rmc/dotfiles/.zprofile
+        dest: /home/rmc/.zprofile
+        owner: rmc
+        group: rmc
+        state: link
+    
+    - name: link gitconfig
+      ansible.builtin.file:
+        src: /home/rmc/dotfiles/git/.gitconfig
+        dest: /home/rmc/.gitconfig
         owner: rmc
         group: rmc
         state: link
