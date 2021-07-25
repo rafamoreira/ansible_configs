@@ -14,3 +14,24 @@
           - openssh
           - wget
           - python
+
+    - name: clone dotfiles repository
+      ansible.builtin.git:
+        repo: 'https://github.com/rafamoreira/dotfiles.git'
+        dest: /home/rmc/dotfiles
+
+    - name: link zshrc
+      ansible.builtin.file:
+        src: /home/rmc/dotfiles/zsh/zshrc
+        dest: /home/rmc/dotfiles/.zshrc
+        owner: rmc
+        group: rmc
+        state: link
+
+    - name: link zprofile
+      ansible.builtin.file:
+        src: /home/rmc/dotfiles/zsh/zprofile
+        dest: /home/rmc/dotfiles/.zprofile
+        owner: rmc
+        group: rmc
+        state: link
