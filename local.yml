@@ -17,7 +17,7 @@
           - openssh
           - wget
           - python
-          - xorg
+          - xorg-server
           - xorg-xinit
           - rxvt-unicode
           - alacritty
