@@ -112,16 +112,8 @@
 
     - name: link alacritty configs
       ansible.builtin.file:
-        src: /home/rmc/dotfiles/alacritty/alacritty.yml
-        dest: /home/rmc/.config/alacritty/alacritty.yml
-        owner: rmc
-        group: rmc
-        state: link
-    
-    - name: link alacritty configs
-      ansible.builtin.file:
-        src: /home/rmc/dotfiles/alacritty/dracula.yml
-        dest: /home/rmc/.config/alacritty/dracula.yml
+        src: /home/rmc/dotfiles/alacritty
+        dest: /home/rmc/.config/alacritty
         owner: rmc
         group: rmc
         state: link
