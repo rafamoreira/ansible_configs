@@ -25,6 +25,17 @@
           - nvidia-settings
           - python-pip
           - base-devel
+          - i3-gaps
+          - i3status
+          - i3lock
+          - rofi
+          - dmenu
+          - i3blocks
+          - pulseaudio
+          - pavucontrol
+          - pulseaudio-alsa
+          - pasystray
+          - alsa-utils
 
     - name: install pip packages
       pip:
@@ -93,3 +104,63 @@
         state: link
 
     - aur: name=paru
+
+    - name: clone i3blocks-contrib repository
+      ansible.builtin.git:
+        repo: 'https://github.com/vivien/i3blocks-contrib.git'
+        dest: /home/rmc/.local/opt/i3blocks-contrib
+
+    - name: link alacritty configs
+      ansible.builtin.file:
+        src: /home/rmc/dotfiles/alacritty/alacritty.yml
+        dest: /home/rmc/.config/alacritty/alacritty.yml
+        owner: rmc
+        group: rmc
+        state: link
+    
+    - name: link alacritty configs
+      ansible.builtin.file:
+        src: /home/rmc/dotfiles/alacritty/dracula.yml
+        dest: /home/rmc/.config/alacritty/dracula.yml
+        owner: rmc
+        group: rmc
+        state: link
+    
+    - name: link i3 configs
+      ansible.builtin.file:
+        src: /home/rmc/dotfiles/i3/config-aurora
+        dest: /home/rmc/.config/i3/config
+        owner: rmc
+        group: rmc
+        state: link
+
+    - name: link i3blocks 
+      ansible.builtin.file:
+        src: /home/rmc/dotfiles/i3/i3blocks/config
+        dest: /home/rmc/.config/i3blocks/config
+        owner: rmc
+        group: rmc
+        state: link
+
+    - name: link i3 status
+      ansible.builtin.file:
+        src: /home/rmc/dotfiles/i3/i3status/config
+        dest: /home/rmc/.config/i3status/config
+        owner: rmc
+        group: rmc
+        state: link
+    
+    - name: link rofi
+      ansible.builtin.file:
+        src: /home/rmc/dotfiles/i3/rofi
+        dest: /home/rmc/.config/rofi
+        owner: rmc
+        group: rmc
+        state: link
+
+
+
+xorg-system
+xorg-user
+Xresources
+zsh
