@@ -44,7 +44,7 @@
 
     - name: clone dotfiles repository
       ansible.builtin.git:
-        repo: 'https://github.com/rafamoreira/dotfiles.git'
+        repo: git@github.com:rafamoreira/dotfiles.git 
         dest: /home/rmc/dotfiles
 
     - name: link zshrc
@@ -118,17 +118,17 @@
         group: rmc
         state: link
     
-    - name: link i3 configs folder
+    - name: create i3 config dir 
       ansible.builtin.file:
-        src: /home/rmc/dotfiles/i3/i3wm
-        dest: /home/rmc/.config/i3
+        path: /home/rmc/.config/i3
         owner: rmc
         group: rmc
-        state: link
+        state: directory
+        mode: '0755'
     
     - name: link i3 configs file
       ansible.builtin.file:
-        src: /home/rmc/.config/i3/config-jupiter
+        src: /home/rmc/dotfiles/i3/i3wm/config-jupiter
         dest: /home/rmc/.config/i3/config
         owner: rmc
         group: rmc
