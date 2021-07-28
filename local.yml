@@ -120,7 +120,7 @@
     
     - name: link i3 configs
       ansible.builtin.file:
-        src: /home/rmc/dotfiles/i3/config-aurora
+        src: /home/rmc/dotfiles/i3/i3/config-jupiter
         dest: /home/rmc/.config/i3/config
         owner: rmc
         group: rmc
