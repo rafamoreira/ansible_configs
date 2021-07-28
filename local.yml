@@ -136,16 +136,16 @@
 
     - name: link i3blocks 
       ansible.builtin.file:
-        src: /home/rmc/dotfiles/i3/i3blocks/config
-        dest: /home/rmc/.config/i3blocks/config
+        src: /home/rmc/dotfiles/i3/i3blocks
+        dest: /home/rmc/.config/i3blocks
         owner: rmc
         group: rmc
         state: link
 
     - name: link i3 status
       ansible.builtin.file:
-        src: /home/rmc/dotfiles/i3/i3status/config
-        dest: /home/rmc/.config/i3status/config
+        src: /home/rmc/dotfiles/i3/i3status
+        dest: /home/rmc/.config/i3status
         owner: rmc
         group: rmc
         state: link
