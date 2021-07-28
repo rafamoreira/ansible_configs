@@ -118,9 +118,17 @@
         group: rmc
         state: link
     
-    - name: link i3 configs
+    - name: link i3 configs folder
       ansible.builtin.file:
-        src: /home/rmc/dotfiles/i3/i3/config-jupiter
+        src: /home/rmc/dotfiles/i3/i3wm
+        dest: /home/rmc/.config/i3
+        owner: rmc
+        group: rmc
+        state: link
+    
+    - name: link i3 configs file
+      ansible.builtin.file:
+        src: /home/rmc/.config/i3/config-jupiter
         dest: /home/rmc/.config/i3/config
         owner: rmc
         group: rmc
