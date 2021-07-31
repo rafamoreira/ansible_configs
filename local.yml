@@ -150,10 +150,18 @@
         group: rmc
         state: link
     
-    - name: link rofi
+    - name: link rofi directory
       ansible.builtin.file:
         src: /home/rmc/dotfiles/i3/rofi
         dest: /home/rmc/.config/rofi
+        owner: rmc
+        group: rmc
+        state: link
+
+    - name: link emacs directory
+      ansible.builtin.file:
+        src: dirs/emacs.d 
+        dest: /home/rmc/.emacs.d
         owner: rmc
         group: rmc
         state: link
