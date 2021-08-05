@@ -160,7 +160,7 @@
 
     - name: link emacs directory
       ansible.builtin.file:
-        src: dirs/emacs.d 
+        src: /home/rmc/ansible_configs/dirs/emacs.d 
         dest: /home/rmc/.emacs.d
         owner: rmc
         group: rmc
